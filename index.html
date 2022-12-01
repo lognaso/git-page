@@ -1,51 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Page Title</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-.wrapper {
-    display: grid;
-    grid-gap: 0px;
-    grid-template-columns: [col] auto [col] auto [col] auto [col] auto  ;
-    grid-template-rows: [row] 100% [row] 100% [row] ;
-    background-color: #fff;
-    color: #444;
-  }
-  
-  .box {
-    background-color: #444;
-    color: #fff;
-    border-radius: 5px;
-    padding: 0px;
-    font-size: 150%;
+* {
+  box-sizing: border-box;
+}
 
-  }
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  height: 100%; /* Should be removed. Only for demonstration */
+}
 
-  .a {
-    grid-column: col / span 2;
-    grid-row: row ;
-  }
-  .b {
-    grid-column: col 3 / span 2 ;
-    grid-row: row ;
-  }
-  
-  .c {
-    grid-column: col / span 2;
-    grid-row: row 2;
-  }
-  .d {
-    grid-column: col 3 / span 2 ;
-    grid-row: row 2;
-  }
+/* Clear floats after the columns */
+.row {
+  height: 50%;
+}
+body {
+  margin: 0px
+}
+#tradingview_5cae2, #tradingview_a1d47, #tradingview_55c5b, #tradingview_69d16 {
+  height: 100vh;
+}
 </style>
 </head>
 <body>
-
-<div class="wrapper">
-  <div class="box a">
-    <!-- TradingView Widget BEGIN -->
+<div style="height: 100vh;">
+  <div class="row">
+    <div class="column">
+      <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_5cae2"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTC.D/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">BTC.D Chart</span></a> by TradingView</div>
@@ -72,8 +57,9 @@
   </script>
 </div>
 <!-- TradingView Widget END -->
-  </div>
-  <div class="box b"><!-- TradingView Widget BEGIN -->
+    </div>
+    <div class="column">
+      <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_a1d47"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/USDT.D/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">USDT.D Chart</span></a> by TradingView</div>
@@ -99,8 +85,12 @@
   );
   </script>
 </div>
-<!-- TradingView Widget END --></div>
-  <div class="box c"><!-- TradingView Widget BEGIN -->
+<!-- TradingView Widget END -->
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_55c5b"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TOTAL/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">TOTAL Chart</span></a> by TradingView</div>
@@ -126,8 +116,10 @@
   );
   </script>
 </div>
-<!-- TradingView Widget END --></div>
-  <div class="box d"><!-- TradingView Widget BEGIN -->
+<!-- TradingView Widget END -->
+    </div>
+    <div class="column">
+      <!-- TradingView Widget BEGIN -->
 <div class="tradingview-widget-container">
   <div id="tradingview_69d16"></div>
   <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TOTAL2/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">TOTAL2 Chart</span></a> by TradingView</div>
@@ -153,10 +145,11 @@
   );
   </script>
 </div>
-<!-- TradingView Widget END --></div>
+<!-- TradingView Widget END -->
+    </div>
+  </div>
 </div>
+
 
 </body>
 </html>
-
-
