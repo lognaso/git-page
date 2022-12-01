@@ -1,155 +1,94 @@
-<!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <style>
+        * {
+    box-sizing: border-box;
 }
 
 /* Create two equal columns that floats next to each other */
 .column {
-  float: left;
-  width: 50%;
-  height: 100%; /* Should be removed. Only for demonstration */
+    float: left;
+    width: 50%;
+    height: 50%; /* Should be removed. Only for demonstration */
 }
-
+body{
+    margin: 0px;
+}
 /* Clear floats after the columns */
-.row {
-  height: 50%;
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
-body {
-  margin: 0px
-}
-#tradingview_5cae2, #tradingview_a1d47, #tradingview_55c5b, #tradingview_69d16 {
-  height: 100vh;
-}
-</style>
+
+    </style>
+    <title>LongLv</title>
 </head>
+
+<script>
+    var symbol1 = "";
+    $(document).ready(function () {
+        bind()
+    })
+
+    function bind() {
+        var symbols = ["CRYPTOCAP:BTC.D", "CRYPTOCAP:USDT.D", "CRYPTOCAP:TOTAL", "CRYPTOCAP:TOTAL2"];
+        for(var i = 0; i < symbols.length; i++) {
+            createTradingview(symbols[i], i);
+        }
+
+<!--        createTradingview(coin, 5);-->
+<!--        createTradingview(coin, 15);-->
+<!--        createTradingview(coin, 30);-->
+<!--        createTradingview(coin, 60);-->
+    }
+
+    function createTradingview(coin, idx) {
+        let rsi_cci = '<iframe id="tradingview_37045" src="https://s.tradingview.com/widgetembed/?frameElementId=tradingview_648e4'
+            + '&symbol=' + coin
+            + '&interval=D'
+            + '&amp;showpopupbutton=1'
+            + '&symboledit=1&saveimage=1&toolbarbg=f1f3f6'
+            + '&studies=RSI@tv-basicstudies&theme=dark'
+            + '&style=1&timezone=Asia%2FHo_Chi_Minh&studies_overrides=%7B%7D&overrides=%7B%7D'
+            + '&enabled_features=%5B%5D&disabled_features=%5B%5D&locale=en&utm_source=&utm_medium=widget_new&utm_campaign=chart'
+            + '&utm_term=' + coin + '" style="width: 100%; height: 100%; margin: 0 !important; padding: 0 !important;" frameborder="0" allowtransparency="true" scrolling="no" allowfullscreen=""></iframe>';
+        $("#tradingview_" + idx).html(rsi_cci);
+    }
+
+    function generateId() {
+        const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890-';
+        var chars = [];
+
+        for (var i = 0; i < 7; i++) {
+            chars[i] = charset[Math.floor(Math.random() * charset.length)]
+        }
+
+        return chars.join('');
+    }
+
+</script>
 <body>
-<div style="height: 100vh;">
-  <div class="row">
+<div class="row">
     <div class="column">
-      <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_5cae2"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/BTC.D/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">BTC.D Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "CRYPTOCAP:BTC.D",
-  "interval": "D",
-  "timezone": "Asia/Ho_Chi_Minh",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "hide_side_toolbar": false,
-  "studies": [
-    "RSI@tv-basicstudies"
-  ],
-  "container_id": "tradingview_5cae2"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
+        <div id="tradingview_0">
+
+        </div>
     </div>
     <div class="column">
-      <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_a1d47"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/USDT.D/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">USDT.D Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "CRYPTOCAP:USDT.D",
-  "interval": "D",
-  "timezone": "Asia/Ho_Chi_Minh",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "hide_side_toolbar": false,
-  "studies": [
-    "RSI@tv-basicstudies"
-  ],
-  "container_id": "tradingview_a1d47"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
+        <div id="tradingview_1"></div>
     </div>
-  </div>
-  <div class="row">
-    <div class="column">
-      <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_55c5b"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TOTAL/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">TOTAL Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "CRYPTOCAP:TOTAL",
-  "interval": "D",
-  "timezone": "Asia/Ho_Chi_Minh",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "hide_side_toolbar": false,
-  "studies": [
-    "RSI@tv-basicstudies"
-  ],
-  "container_id": "tradingview_55c5b"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
-    </div>
-    <div class="column">
-      <!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div id="tradingview_69d16"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/TOTAL2/?exchange=CRYPTOCAP" rel="noopener" target="_blank"><span class="blue-text">TOTAL2 Chart</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
-  <script type="text/javascript">
-  new TradingView.widget(
-  {
-  "autosize": true,
-  "symbol": "CRYPTOCAP:TOTAL2",
-  "interval": "D",
-  "timezone": "Asia/Ho_Chi_Minh",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "toolbar_bg": "#f1f3f6",
-  "enable_publishing": false,
-  "hide_side_toolbar": false,
-  "studies": [
-    "RSI@tv-basicstudies"
-  ],
-  "container_id": "tradingview_69d16"
-}
-  );
-  </script>
-</div>
-<!-- TradingView Widget END -->
-    </div>
-  </div>
 </div>
 
-
+<div class="row">
+    <div class="column">
+        <div id="tradingview_2"></div>
+    </div>
+    <div class="column">
+        <div id="tradingview_3"></div>
+    </div>
+</div>
 </body>
 </html>
